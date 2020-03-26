@@ -1,0 +1,350 @@
+import turtle
+
+# Settings
+turtle.setup(600, 600)
+screen = turtle.Screen()
+screen.title('Turtle Chess')
+turtle.register_shape('WK.gif')
+turtle.register_shape('WQ.gif')
+turtle.register_shape('BK.gif')
+turtle.register_shape('BQ.gif')
+turtle.register_shape('WB.gif')
+turtle.register_shape('BB.gif')
+turtle.register_shape('WKn.gif')
+turtle.register_shape('BKn.gif')
+turtle.register_shape('WR.gif')
+turtle.register_shape('BR.gif')
+turtle.register_shape('WP.gif')
+turtle.register_shape('BP.gif')
+screen.bgcolor('orange')
+
+# Chess Board 
+board = turtle.Turtle()
+board.speed(0)
+board.hideturtle()
+board.penup()
+board.setpos(0,200)
+board.pendown()
+
+for i in range(8):
+    board.forward(200)
+    board.right(90)
+    board.forward(50)
+    board.right(90)
+    board.forward(400)
+    board.right(90)
+    board.forward(50)
+    board.right(90)
+    board.forward(200)
+    board.right(90)
+    board.forward(50)
+    board.left(90)
+
+
+board2 = turtle.Turtle()
+board2.speed(0)
+board2.hideturtle()
+board2.penup()
+board2.setpos(200,0)
+board2.pendown()
+board2.setheading(270)
+for i in range(8):
+    board2.forward(200)
+    board2.right(90)
+    board2.forward(50)
+    board2.right(90)
+    board2.forward(400)
+    board2.right(90)
+    board2.forward(50)
+    board2.right(90)
+    board2.forward(200)
+    board2.right(90)
+    board2.forward(50)
+    board2.left(90)
+
+writer = turtle.Turtle()
+writer.hideturtle()
+writer.penup()
+writer.goto(-195,-210)
+writer.pendown()
+writer.write('a')
+writer.penup()
+writer.goto(-145,-210)
+writer.pendown()
+writer.write('b')
+writer.penup()
+writer.goto(-95,-210)
+writer.pendown()
+writer.write('c')
+writer.penup()
+writer.goto(-45,-210)
+writer.pendown()
+writer.write('d')
+writer.penup()
+writer.goto(5,-210)
+writer.pendown()
+writer.write('e')
+writer.penup()
+writer.goto(55,-210)
+writer.pendown()
+writer.write('f')
+writer.penup()
+writer.goto(105,-210)
+writer.pendown()
+writer.write('g')
+writer.penup()
+writer.goto(155,-210)
+writer.pendown()
+writer.write('h')
+writer.penup()
+writer.goto(-205, -195)
+writer.write('1')
+writer.penup()
+writer.goto(-205,-145)
+writer.pendown()
+writer.write('2')
+writer.penup()
+writer.goto(-205, -95)
+writer.write('3')
+writer.penup()
+writer.goto(-205,-45)
+writer.pendown()
+writer.write('4')
+writer.penup()
+writer.goto(-205, 5)
+writer.write('5')
+writer.penup()
+writer.goto(-205, 55)
+writer.write('6')
+writer.penup()
+writer.goto(-205,105)
+writer.pendown()
+writer.write('7')
+writer.penup()
+writer.goto(-205, 155)
+writer.write('8')
+writer.penup()
+    
+# White King
+wk = turtle.Turtle()
+wk.shape('WK.gif')
+wk.penup()
+wk.setpos(25,-175)
+wk.ondrag(wk.goto)
+
+# White Queen
+wq = turtle.Turtle()
+wq.shape('WQ.gif')
+wq.penup()
+wq.setpos(-25,-175)
+wq.ondrag(wq.goto)
+
+# White Bishop 1
+wb1 = turtle.Turtle()
+wb1.shape('WB.gif')
+wb1.penup()
+wb1.setpos(75,-175)
+wb1.ondrag(wb1.goto)
+
+# White Bishop 2
+wb2 = turtle.Turtle()
+wb2.shape('WB.gif')
+wb2.penup()
+wb2.setpos(-75,-175)
+wb2.ondrag(wb2.goto)
+
+# White Knight 1
+wk1 = turtle.Turtle()
+wk1.shape('WKn.gif')
+wk1.penup()
+wk1.setpos(125,-175)
+wk1.ondrag(wk1.goto)
+
+# White Knight 2
+wk2 = turtle.Turtle()
+wk2.shape('WKn.gif')
+wk2.penup()
+wk2.setpos(-125,-175)
+wk2.ondrag(wk2.goto)
+
+# White Rook 1
+wr1 = turtle.Turtle()
+wr1.shape('WR.gif')
+wr1.penup()
+wr1.setpos(175,-175)
+wr1.ondrag(wr1.goto)
+
+# White Rook 2
+wr2 = turtle.Turtle()
+wr2.shape('WR.gif')
+wr2.penup()
+wr2.setpos(-175,-175)
+wr2.ondrag(wr2.goto)
+
+# White Pawn 1
+wp1 = turtle.Turtle()
+wp1.shape('WP.gif')
+wp1.penup()
+wp1.setpos(25,-125)
+wp1.ondrag(wp1.goto)
+
+# White Pawn 2
+wp2 = turtle.Turtle()
+wp2.shape('WP.gif')
+wp2.penup()
+wp2.setpos(-25,-125)
+wp2.ondrag(wp2.goto)
+
+# White Pawn 3
+wp3 = turtle.Turtle()
+wp3.shape('WP.gif')
+wp3.penup()
+wp3.setpos(75,-125)
+wp3.ondrag(wp3.goto)
+
+# White Pawn 4
+wp4 = turtle.Turtle()
+wp4.shape('WP.gif')
+wp4.penup()
+wp4.setpos(-75,-125)
+wp4.ondrag(wp4.goto)
+
+# White Pawn 5
+wp5 = turtle.Turtle()
+wp5.shape('WP.gif')
+wp5.penup()
+wp5.setpos(125,-125)
+wp5.ondrag(wp5.goto)
+
+# White Pawn 6
+wp6 = turtle.Turtle()
+wp6.shape('WP.gif')
+wp6.penup()
+wp6.setpos(-125,-125)
+wp6.ondrag(wp6.goto)
+
+# White Pawn 7
+wp7 = turtle.Turtle()
+wp7.shape('WP.gif')
+wp7.penup()
+wp7.setpos(175,-125)
+wp7.ondrag(wp7.goto)
+
+# White Pawn 8
+wp8 = turtle.Turtle()
+wp8.shape('WP.gif')
+wp8.penup()
+wp8.setpos(-175,-125)
+wp8.ondrag(wp8.goto)
+
+# Black King
+bk = turtle.Turtle()
+bk.shape('BK.gif')
+bk.penup()
+bk.setpos(25,175)
+bk.ondrag(bk.goto)
+
+# Black Queen
+bq = turtle.Turtle()
+bq.shape('BQ.gif')
+bq.penup()
+bq.setpos(-25,175)
+bq.ondrag(bq.goto)
+
+# Black Bishop 1
+bb1 = turtle.Turtle()
+bb1.shape('BB.gif')
+bb1.penup()
+bb1.setpos(75,175)
+bb1.ondrag(bb1.goto)
+
+# Black Bishop 2
+bb2 = turtle.Turtle()
+bb2.shape('BB.gif')
+bb2.penup()
+bb2.setpos(-75,175)
+bb2.ondrag(bb2.goto)
+
+# Black Knight 1
+bk1 = turtle.Turtle()
+bk1.shape('BKn.gif')
+bk1.penup()
+bk1.setpos(125,175)
+bk1.ondrag(bk1.goto)
+
+# Black Knight 2
+bk2 = turtle.Turtle()
+bk2.shape('BKn.gif')
+bk2.penup()
+bk2.setpos(-125,175)
+bk2.ondrag(bk2.goto)
+
+# Black Rook 1
+br1 = turtle.Turtle()
+br1.shape('BR.gif')
+br1.penup()
+br1.setpos(175,175)
+bk1.ondrag(bk1.goto)
+
+# Black Rook 2
+br2 = turtle.Turtle()
+br2.shape('BR.gif')
+br2.penup()
+br2.setpos(-175,175)
+br2.ondrag(br2.goto)
+
+# Black Pawn 1
+bp1 = turtle.Turtle()
+bp1.shape('BP.gif')
+bp1.penup()
+bp1.setpos(25,125)
+bp1.ondrag(bp1.goto)
+
+# Black Pawn 2
+bp2 = turtle.Turtle()
+bp2.shape('BP.gif')
+bp2.penup()
+bp2.setpos(-25,125)
+bp2.ondrag(bp2.goto)
+
+# Black Pawn 3
+bp3 = turtle.Turtle()
+bp3.shape('BP.gif')
+bp3.penup()
+bp3.setpos(75,125)
+bp3.ondrag(bp3.goto)
+
+# Black Pawn 4
+bp4 = turtle.Turtle()
+bp4.shape('BP.gif')
+bp4.penup()
+bp4.setpos(-75,125)
+bp4.ondrag(bp4.goto)
+
+# Black Pawn 5
+bp5 = turtle.Turtle()
+bp5.shape('BP.gif')
+bp5.penup()
+bp5.setpos(125,125)
+bp5.ondrag(bp5.goto)
+
+# Black Pawn 6
+bp6 = turtle.Turtle()
+bp6.shape('BP.gif')
+bp6.penup()
+bp6.setpos(-125,125)
+bp6.ondrag(bp6.goto)
+
+# Black Pawn 7
+bp7 = turtle.Turtle()
+bp7.shape('BP.gif')
+bp7.penup()
+bp7.setpos(175,125)
+bp7.ondrag(bp7.goto)
+
+# Black Pawn 8
+bp8 = turtle.Turtle()
+bp8.shape('BP.gif')
+bp8.penup()
+bp8.setpos(-175,125)
+bp8.ondrag(bp8.goto)
